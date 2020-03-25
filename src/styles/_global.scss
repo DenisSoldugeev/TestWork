@@ -1,4 +1,55 @@
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans",sans-serif;
+  color: $main-color;
+  font-size: 16px;
 
-  color: blue;
+}
+img {
+  width: 100%;
+}
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+.d-block {
+  display: block;
+}
+.warning {
+  color: $white-color;
+  padding: 0 10px;
+  border-radius: 50px;
+  background-color: $orange-color;
+  margin-right: 15px;
+  margin-left: 25px;
+}
+
+.btn {
+  padding: 5px;
+  text-transform: uppercase;
+  color: $white-color;
+  border-radius: 2px;
+  &-success {
+    background-color: $btn-success;
+  }
+  &-error {
+
+  }
+  &-add {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #979797;
+    background-color: #fff;
+    color: $text-color;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      box-shadow: 5px 10px 8px #888888;
+    }
+  }
 }

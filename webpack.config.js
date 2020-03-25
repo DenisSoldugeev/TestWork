@@ -24,17 +24,21 @@ module.exports = {
             template: "./index.html",
             minify: {
                 collapseWhitespace: isProd
-            }
+            },
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'src/assets/img'),
-                to:  path.resolve(__dirname, 'dist/img'),
-            }
+                from: 'styles/stars-rating/star-rating-svg.css',
+                to: 'css'
+            },
+            {
+                from: 'assets/js/jquery.star-rating-svg.js',
+                to: 'js'
+            },
         ]),
         new MiniCssExtractPlugin ({
-            filename: 'main.css'
+            filename: '[name].css'
         })
     ],
     module: {
@@ -76,13 +80,22 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'img',
+                },
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts'
+                },
             }
         ]
     }
 };
+

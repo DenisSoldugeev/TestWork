@@ -3,8 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/star-rating-svg.css">
 </head>
 <body>
-<h1>я Пидор</h1>
+<section id="reviews" class="reviews">
+    <div class="container">
+        <h2 class="reviews__title">
+            Мои отзывы о товарах
+        </h2>
+        <div class="reviews__check">
+            <span class="d-block warning">!</span>
+            <span class="d-block">Ваши отзывы будут опубликованы на сайте после проверки модератором.</span>
+        </div>
+        <div class="reviews__table">
+            <div class="table__header">
+                <div class="table__col col-1">
+                    Фото
+                </div>
+                <div class="table__col col-2">
+                    Наименования товара
+                </div>
+                <div class="table__col col-3">
+                    Ваши отзывы
+                </div>
+                <div class="table__col col-4">
+                    Статус отызва
+                </div>
+                <div class="table__col col-5">
+                    Действия
+                </div>
+            </div>
+            <div class="table__main">
+                <div class="table__col col-1">
+                    <img src="img/1.png" alt="#" class="product__photo">
+                </div>
+                <div class="table__col col-2">
+                    <p class="product__name">Дрель ударная BOSCH PSB 550 RЕ, БЗП Арт.0603130020</p>
+                </div>
+                <div class="table__col col-3">
+                    <div class="stars-rating">
+                        <span class="my-rating d-block"></span>
+                        <span class="live-rating d-block"></span>
+                    </div>
+                    <div class="product__assessment">
+                        <div class="">Впечатление: <span>5</span></div>
+                        <div class="">Соответсвие: <span>4</span></div>
+                        <div class="">Надежность: <span>5</span></div>
+                    </div>
+                    <p class="product__reviews">Значит купил я данную модель, поработал неделю, отказал один аккумулятор, заряд держит так себе, НОООООО МАГАЗИН АДЕКВАТНЫЙ, ОБМЕНЯЛИ НА НОВЫЙ, ПРИЧЁМ ПРИВЕЗЛИ ДОМОЙ. С ТАКИМ ПРОДАВЦОМ ПРИЯТНО...</p>
+                </div>
+                <div class="table__col col-4">
+                    <span class="d-block btn btn-success">Опубликовано</span>
+                    <span class="d-block reviews__date">1 августа, 2018</span>
+                </div>
+                <div class="table__col col-5">
+                    <button class="btn btn-add" >Дополнить отзыв</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/jquery.star-rating-svg.js"></script>
+<script>
+    $(".my-rating").starRating({
+        initialRating: 4,
+        strokeColor: '#ED8A19',
+        hoverColor: '#ED8A19',
+        activeColor: '#ED8A19',
+        ratedColor: '#ED8A19',
+        useGradient: false,
+        strokeWidth: 10,
+        starSize: 15,
+        onHover: function(currentIndex, currentRating, $el){
+            $('.live-rating').text(currentIndex);
+        },
+        onLeave: function(currentIndex, currentRating, $el){
+            $('.live-rating').text(currentRating);
+        }
+    });
+
+</script>
 </body>
 </html>
