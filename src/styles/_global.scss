@@ -20,6 +20,9 @@ img {
 .d-block {
   display: block;
 }
+.d-in-block {
+  display: inline-block;
+}
 .warning {
   color: $white-color;
   padding: 0 10px;
@@ -28,7 +31,16 @@ img {
   margin-right: 15px;
   margin-left: 25px;
 }
-
+.arrow {
+  &-down {
+    width: 7px;
+    height: 7px;
+    border-top: 3px solid $orange-color;
+    border-left: 3px solid $orange-color;
+    transform: rotate(225deg);
+    margin-left: 15px;
+  }
+}
 .btn {
   padding: 5px;
   text-transform: uppercase;

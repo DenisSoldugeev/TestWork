@@ -21,6 +21,13 @@
     font-size: 14px;
     color: $text-color;
   }
+  &__more {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: $orange-color;
+    cursor: pointer;
+  }
 }
 .table {
   &__header {
@@ -72,6 +79,10 @@
   }
   &__reviews {
     max-width: 400px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    overflow: hidden;
+    transition: 0.8s;
   }
   &__assessment {
     color: $text-color;
